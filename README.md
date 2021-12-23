@@ -1,6 +1,7 @@
 # JS-Customised-libraries
 
 this is for learning how to build a js library
+https://zxfjd3g.github.io/atguigu_utils-docs
 
 1.1 call() apply() & bind()
 1.1.1 API 说明
@@ -40,3 +41,5 @@ this is for learning how to build a js library
   - 理解：
     - 在函数需要频繁触发时：在规定时间内，只让最后一次生效，前面的不生效
     - 适合多次事件一次响应的情况
+  - 场景：
+    - 输入框实时搜索联想（keyup/input）
