@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event bus</title>
+    <script src="../src/event-bus/index.js"></script>
+  </head>
+  <body>
+    <script>
+      //   event bus
+      eventBus.on("login", (data) => {
+        console.log(data + "login");
+      });
+      eventBus.on("login", (data) => {
+        console.log(data + "is ready");
+      });
+      eventBus.on("logout", (data) => {
+        console.log(data + "is logout");
+      });
+      console.log(eventBus);
+      //   触发事件
+      setTimeout(() => {
+        eventBus.emit("login", "coco");
+        eventBus.emit("logout", "coco");
+      }, 2000);
+
+      //   解绑事件
+      //   eventBus.off("login");
+      eventBus.off();
+    </script>
+  </body>
+</html>
