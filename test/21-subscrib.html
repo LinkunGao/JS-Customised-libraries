@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>subscribe</title>
+    <script src="../src/pub-sub/index.js"></script>
+  </head>
+  <body>
+    <script>
+      let pid = PubSub.subscribe("pay", (data) => {
+        console.log(
+          "the merchant received the order, is ready to cook...",
+          data
+        );
+      });
+      let pid2 = PubSub.subscribe("pay", (data) => {
+        console.log(
+          "The rider has received the order and is ready to pick it up..."
+        );
+      });
+      PubSub.subscribe("cancel", (data) => {
+        console.log("The merchant received a request to cancel...");
+      });
+      //   取消订阅
+      PubSub.unsubscribe("token_2");
+      //   发布消息
+      PubSub.publish("pay", {
+        title: "鱼香肉丝盖饭",
+        price: 20,
+        pos: "三年二班",
+      });
+
+      console.log(PubSub);
+    </script>
+  </body>
+</html>

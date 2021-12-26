@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+    <script src="../src/axios/index.js"></script>
+  </head>
+  <body>
+    <script>
+      axios({
+        // 请求类型
+        method: "POST",
+        // 请求url
+        // url: "http://127.0.0.1",
+        url: "https://api.apiopen.top/getJoke",
+        // URL参数
+        params: {
+          a: 100,
+          b: 200,
+        },
+        // 请求体
+        data: {
+          c: 300,
+          d: 400,
+        },
+      }).then((response) => {
+        console.log(response);
+      });
+
+      //   调用对象方法
+      axios
+        .get("https://api.apiopen.top/getJoke", {
+          params: {
+            a: 100,
+            b: 200,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        });
+
+      axios
+        .post("https://api.apiopen.top/getJoke", {
+          params: {
+            a: 100,
+            b: 200,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        });
+
+      axios
+        .put("https://api.apiopen.top/getJoke", {
+          params: {
+            a: 100,
+            b: 200,
+          },
+          data: {
+            c: 300,
+            d: 400,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        });
+
+      axios
+        .delete("https://api.apiopen.top/getJoke", {
+          params: {
+            a: 100,
+            b: 200,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        });
+    </script>
+  </body>
+</html>
